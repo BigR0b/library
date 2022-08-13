@@ -4,7 +4,7 @@ let myLibary = [];
 const newBookBtn = document.querySelector(".newBookBtn");
 const libraryContainer = document.querySelector(".container");
 
-newBookBtn.addEventListener("click", sayHello);
+newBookBtn.addEventListener("click");
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
