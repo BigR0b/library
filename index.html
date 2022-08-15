@@ -10,25 +10,32 @@
   <body>
     <h1>Books</h1>
     <button class="newBookBtn">New Book</button>
-    <form action="">
+    <div class="form-container">
+      <form action="">
+        <div>
+          <label for="text">Title</label>
+          <input type="text" name="" id="text" class="title" />
+        </div>
+        <div>
+          <label for="author">Author</label>
+          <input type="text" name="" id="author" class="author" />
+        </div>
+        <div>
+          <label for="pages">Pages</label>
+          <input type="number" name="" id="pages" class="pages" />
+        </div>
+        <div>
+          <label for="read">Read</label>
+          <input type="checkbox" name="" id="read" class="hasRead" />
+        </div>
+      </form>
       <div>
-        <label for="text">Title</label>
-        <input type="text" name="" id="text" class="title" />
+        <button class="create">Submit</button>
       </div>
-      <div>
-        <label for="author">Author</label>
-        <input type="text" name="" id="author" class="author" />
-      </div>
-      <div>
-        <label for="pages">Pages</label>
-        <input type="number" name="" id="pages" class="pages" />
-      </div>
-      <div>
-        <label for="read">Read</label>
-        <input type="checkbox" name="" id="read" class="hasRead" />
-      </div>
-    </form>
-    <div class="container"></div>
+    </div>
+    <div class="container">
+      <div>The Hobbit<br />J.R.R. Tolkien<br />295<br />Has read : false</div>
+    </div>
 
     <script src="books.js"></script>
   </body>
