@@ -31,8 +31,9 @@ function addBookToLibrary() {
   );
   myLibrary.push(newBook);
 }
-
+// Display books to the DOM
 function displayBooks(arr) {
+  let bookIndex = 0;
   while (libraryContainer.firstChild) {
     libraryContainer.removeChild(libraryContainer.firstChild);
   }
@@ -43,11 +44,21 @@ function displayBooks(arr) {
     book.innerText = element.info();
     libraryContainer.appendChild(book);
     book.appendChild(removeBookBtn);
+    removeBookBtn.classList.add("removeBtn");
+    book.classList.add("book");
+    book.dataset.index = bookIndex;
+    bookIndex++;
+    removeBookBtn.addEventListener("click", function () {
+      libraryContainer.removeChild(book);
+      myLibrary.splice(book.dataset.index, 1);
+    });
   });
 }
+//Toggle Form
 function displayForm() {
   bookForm.classList.toggle("hidden");
 }
+
 newBookBtn.addEventListener("click", displayForm);
 createBookBtn.addEventListener("click", addBookToLibrary);
 createBookBtn.addEventListener("click", function () {
