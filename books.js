@@ -18,7 +18,7 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
   this.info = function () {
-    return `${this.title},  ${this.author}, ${this.pages} pages Has read : ${this.read}`;
+    return `${this.title},  ${this.author}, ${this.pages} pages Has Read : ${this.read}`;
   };
 }
 
@@ -38,8 +38,11 @@ function displayBooks(arr) {
   }
   arr.forEach((element) => {
     let book = document.createElement("div");
+    let removeBookBtn = document.createElement("button");
+    removeBookBtn.innerText = "Remove";
     book.innerText = element.info();
     libraryContainer.appendChild(book);
+    book.appendChild(removeBookBtn);
   });
 }
 function displayForm() {
