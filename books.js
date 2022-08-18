@@ -40,7 +40,7 @@ function displayBooks(arr) {
   arr.forEach((element) => {
     let book = document.createElement("div");
     let removeBookBtn = document.createElement("button");
-    let readBookBtn = document.createElement("Button");
+    let readBookBtn = document.createElement("button");
 
     removeBookBtn.innerText = "Remove";
     readBookBtn.innerText = "Read";
@@ -51,14 +51,15 @@ function displayBooks(arr) {
     removeBookBtn.classList.add("removeBtn");
     readBookBtn.classList.add("readBookBtn");
     book.classList.add("book");
-    book.classList.add("notRead");
-
+    if (!myLibrary[bookIndex].hasRead) {
+      book.classList.add("notRead");
+    }
     book.dataset.index = bookIndex;
     bookIndex++;
     //Remove button
     removeBookBtn.addEventListener("click", function () {
       libraryContainer.removeChild(book);
-      myLibrary.splice(book.dataset.index, 1);
+      myLibrary.splice(myLibrary[myLibrary.indexOf(book)], 1);
     });
     //Read button
     readBookBtn.addEventListener("click", function () {
